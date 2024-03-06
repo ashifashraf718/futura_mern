@@ -19,7 +19,7 @@
 }
 .signup input{
     width: 50vh;
-    
+    font-size: 16px;
     background-color: gray;
     outline: none;
     border: none;

@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React, { useState } from 'react'
+import axios from "axios"
 import "./signup.css"
-import { SingUpApi } from './Api';
+import { updateApi } from './Api'
+const Update = () => {
+    const [name, setName] = useState()
+    const [Email, setEmail] = useState()
+    const [Mob, setMob] = useState()
+    const [Address, setAddress] = useState()
+    const [Pin, setPin] = useState()
+    const [Password, setPassword] = useState()
 
-const Signup = () => {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [mob, setMob] = useState("")
-    const [address, setAddress] = useState("")
-    const [pin, setPin] = useState()
-    const [password, setPassword] = useState("")
+
+    let Id="65d8375e9d9419c4de793f6e"
 
     const submit = () => {
-    SingUpApi({name,email,mob,address,pin,password})
-    
+        console.log(name, Email, Mob, Address, Pin, Password);
+        updateApi({name, Email, Mob, Address, Pin, Password},Id)
     }
 
 
-    
-    return (
-        <div className='main'>
+  return (
+    <div className='main'>
             <div className="signup">
                 <input type="text" placeholder='Name' onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
@@ -31,7 +32,7 @@ const Signup = () => {
             </div>
 
         </div>
-    )
+  )
 }
 
-export default Signup
+export default Update
